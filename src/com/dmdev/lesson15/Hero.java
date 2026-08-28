@@ -3,12 +3,12 @@ package com.dmdev.lesson15;
 public abstract class Hero implements Mortal {
 
     private String name;
-    private int damage;
+    private int basedamage;
     private int health;
 
-    public Hero(String name, int damage, int health) {
+    public Hero(String name, int basedamage, int health) {
         this.name = name;
-        this.damage = damage;
+        this.basedamage = basedamage;
         this.health = health;
     }
 
@@ -22,6 +22,10 @@ public abstract class Hero implements Mortal {
     }
 
     public abstract void attackEnemy(Enemy enemy);
+    public abstract void normalAttack(Enemy enemy);
+    public abstract void strongAttack(Enemy enemy);
+    public abstract void specialAttack(Enemy enemy);
+    public abstract boolean tryDodge();
 
     @Override
     public boolean isAlive() {
@@ -33,7 +37,7 @@ public abstract class Hero implements Mortal {
     }
 
     public int getDamage() {
-        return damage;
+        return basedamage;
     }
 
     public int getHealth() {
