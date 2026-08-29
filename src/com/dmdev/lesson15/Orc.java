@@ -23,6 +23,6 @@ public class Orc extends Enemy {
             int damageVariation = 70 + random.nextInt(31); // 70-100%
             damage = damage * damageVariation / 100;
         }
-        hero.takeDamage(getDamage());
+        hero.takeDamage(damage);
     }
 }
