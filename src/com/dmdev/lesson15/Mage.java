@@ -45,9 +45,8 @@ public class Mage extends Hero {
             int damageVariation = 70 + random.nextInt(31); // 70-100%
             damage = damage * damageVariation / 100;
         }
-        System.out.println("Урон: " + damage);
         enemy.takeDamage(damage);
-        System.out.println("Урон: " + damage);
+        System.out.println("Урон: " + damage + " (Мана: " + mana + ")");
     }
 
     @Override
@@ -79,7 +78,6 @@ public class Mage extends Hero {
                 int damageVariation = 70 + random.nextInt(31); // 70-100%
                 damage = damage * damageVariation / 100;
             }
-            System.out.println("Урон: " + damage);
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Мана: " + mana + ")");
         } else {
@@ -116,7 +114,6 @@ public class Mage extends Hero {
                 int damageVariation = 70 + random.nextInt(31); // 70-100%
                 damage = damage * damageVariation / 100;
             }
-            System.out.println("Урон: " + damage);
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Мана: " + mana + ")");
         } else {

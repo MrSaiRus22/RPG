@@ -44,7 +44,6 @@ public class Archer extends Hero {
                 int damageVariation = 70 + random.nextInt(31); // 70-100%
                 damage = damage * damageVariation / 100;
             }
-            System.out.println("Урон: " + damage);
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Стрелы: " + arrows + ")");
         } else {
@@ -78,7 +77,6 @@ public class Archer extends Hero {
                 int damageVariation = 70 + random.nextInt(31); // 70-100%
                 damage = damage * damageVariation / 100;
             }
-            System.out.println("Урон: " + damage);
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Стрелы: " + arrows + ")");
         } else {
@@ -105,7 +103,6 @@ public class Archer extends Hero {
                 int damageVariation = 70 + random.nextInt(31); // 70-100%
                 damage = damage * damageVariation / 100;
             }
-            System.out.println("Урон: " + damage);
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Стрелы: " + arrows + ")");
         } else {

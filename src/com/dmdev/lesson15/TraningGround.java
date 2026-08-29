@@ -177,7 +177,7 @@ public class TraningGround {
 
         if (hero instanceof Hobbit) {
             Hobbit hobbit = (Hobbit) hero;
-            System.out.println("\uD83E\uDEA8 Камни: " + hobbit.getStones());
+            System.out.println("⛰\uFE0F Камни: " + hobbit.getStones());
             System.out.println("🎯 Шанс крита: 65%");
             System.out.println("😅 Шанс промаха: 30%");
             System.out.println("🌀 Шанс уклонения: 70%");
