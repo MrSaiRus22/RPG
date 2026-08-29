@@ -6,10 +6,10 @@ public class TraningGround {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        Mage mage = new Mage("Гендальф", 100, 750, 100);
-        Archer archer = new Archer("Леголас", 75, 900, 20);
-        Warrior warrior = new Warrior("Арагорн", 50, 1250,100);
-        Hobbit hobbit = new Hobbit("Бильбо", 25, 500);
+        Mage mage = new Mage("Гендальф", 100, 1500, 100);
+        Archer archer = new Archer("Леголас", 75, 1800, 20);
+        Warrior warrior = new Warrior("Арагорн", 50, 2000,100);
+        Hobbit hobbit = new Hobbit("Бильбо", 25, 750);
 
         Balrog balrog = new Balrog("Балрог", 300, 2100);
         Orc orc = new Orc("Орк", 170, 1350);

@@ -82,8 +82,10 @@ public class Archer extends Hero {
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Стрелы: " + arrows + ")");
         } else {
-            System.out.println("❌ Недостаточно стрел! Выполняется обычная атака.");
-            normalAttack(enemy);
+            System.out.println("❌ Нет стрел! " + getName() + " бьет луком!");
+            int damage = getDamage() / 2;
+            enemy.takeDamage(damage);
+            System.out.println("Урон: " + damage);
         }
     }
 
@@ -107,8 +109,10 @@ public class Archer extends Hero {
             enemy.takeDamage(damage);
             System.out.println("Урон: " + damage + " (Стрелы: " + arrows + ")");
         } else {
-            System.out.println("❌ Недостаточно стрел! Выполняется сильная атака.");
-            strongAttack(enemy);
+            System.out.println("❌ Нет стрел! " + getName() + " бьет луком!");
+            int damage = getDamage() / 2;
+            enemy.takeDamage(damage);
+            System.out.println("Урон: " + damage);
         }
     }
 
