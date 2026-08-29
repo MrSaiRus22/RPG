@@ -177,7 +177,7 @@ public class TraningGround {
 
         if (hero instanceof Hobbit) {
             Hobbit hobbit = (Hobbit) hero;
-            System.out.println("🪨 Камни: " + hobbit.getStones());
+            System.out.println("\uD83E\uDEA8 Камни: " + hobbit.getStones());
             System.out.println("🎯 Шанс крита: 65%");
             System.out.println("😅 Шанс промаха: 30%");
             System.out.println("🌀 Шанс уклонения: 70%");
@@ -186,21 +186,21 @@ public class TraningGround {
         }
         if (hero instanceof Warrior){
             Warrior warrior = (Warrior) hero;
-            System.out.println("Выносливость: " + warrior.getEndurance());
+            System.out.println("⚡ Выносливость: " + warrior.getEndurance());
             System.out.println("🎯 Шанс крита: 10%");
             System.out.println("😅 Шанс промаха: 25%");
             System.out.println("🌀 Шанс уклонения: 30%");
         }
         if (hero instanceof Mage){
             Mage mage = (Mage) hero;
-            System.out.println("Мана: " + mage.getMana());
+            System.out.println("\uD83D\uDD2E Мана: " + mage.getMana());
             System.out.println("🎯 Шанс крита: 25%");
             System.out.println("😅 Шанс промаха: 20%");
             System.out.println("🌀 Шанс уклонения: 20%");
         }
         if (hero instanceof Archer){
             Archer archer = (Archer) hero;
-            System.out.println("Стрелы: " + archer.getArrows());
+            System.out.println("\uD83C\uDFF9 Стрелы: " + archer.getArrows());
             System.out.println("🎯 Шанс крита: 35%");
             System.out.println("😅 Шанс промаха: 10%");
             System.out.println("🌀 Шанс уклонения: 50%");
