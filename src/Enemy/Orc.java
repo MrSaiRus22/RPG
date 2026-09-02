@@ -1,17 +1,19 @@
-package com.dmdev.lesson15;
+package Enemy;
+import Hero.Hero;
+
 import java.util.Random;
-public class Chicken extends Enemy {
+public class Orc extends Enemy {
 
     private Random random = new Random();
-    private int criticalChance = 50;
+    private int criticalChance = 25;
 
-    public Chicken(String name, int damage, int health) {
+    public Orc(String name, int damage, int health) {
         super(name, damage, health);
     }
 
     @Override
     public void attackHero(Hero hero) {
-        System.out.println(getName() + " Клюнула " + hero.getName() + "a");
+        System.out.println(getName() + " ударил буловой " + hero.getName() + "a");
         int damage = getDamage();
         boolean isCritical = random.nextInt(100) < criticalChance;
 

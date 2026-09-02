@@ -1,4 +1,6 @@
-package com.dmdev.lesson15;
+package Hero;
+
+import Enemy.Enemy;
 
 import java.util.Random;
 

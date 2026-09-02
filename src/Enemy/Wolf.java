@@ -1,4 +1,6 @@
-package com.dmdev.lesson15;
+package Enemy;
+import Hero.Hero;
+
 import java.util.Random;
 public class Wolf extends Enemy {
 

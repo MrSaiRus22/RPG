@@ -1,14 +1,17 @@
-package com.dmdev.lesson15;
+package Enemy;
 
-public abstract class Hero implements Mortal {
+import Hero.Hero;
+import Runner.Mortal;
+
+public abstract class Enemy implements Mortal {
 
     private String name;
-    private int basedamage;
+    private int damage;
     private int health;
 
-    public Hero(String name, int basedamage, int health) {
+    public Enemy(String name, int damage, int health) {
         this.name = name;
-        this.basedamage = basedamage;
+        this.damage = damage;
         this.health = health;
     }
 
@@ -21,15 +24,15 @@ public abstract class Hero implements Mortal {
         }
     }
 
-    public abstract void attackEnemy(Enemy enemy);
-    public abstract void normalAttack(Enemy enemy);
-    public abstract void strongAttack(Enemy enemy);
-    public abstract void specialAttack(Enemy enemy);
-    public abstract boolean tryDodge();
+    public abstract void attackHero(Hero hero);
 
     @Override
     public boolean isAlive() {
         return health > 0;
+    }
+
+    public int getHealth() {
+        return health;
     }
 
     public String getName() {
@@ -37,13 +40,6 @@ public abstract class Hero implements Mortal {
     }
 
     public int getDamage() {
-        return basedamage;
+        return damage;
     }
-
-    public int getHealth() {
-        return health;
-    }
-
-
-
 }

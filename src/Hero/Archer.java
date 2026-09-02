@@ -1,4 +1,6 @@
-package com.dmdev.lesson15;
+package Hero;
+
+import Enemy.Enemy;
 
 import java.util.Random;
 
@@ -56,15 +58,13 @@ public class Archer extends Hero {
 
     @Override
     public void strongAttack(Enemy enemy) {
-
-        // 2. Проверка на уклонение врага
-        if (random.nextInt(100) < enemyDodgeChance) {
-            System.out.println("\uD83D\uDCA8 " + enemy.getName() + " увернулся от удара!");
-            return;
-        }
-
         if (arrows >= 3) {
             arrows -= 3;
+            // 2. Проверка на уклонение врага
+            if (random.nextInt(100) < enemyDodgeChance) {
+                System.out.println("\uD83D\uDCA8 " + enemy.getName() + " увернулся от удара!");
+                return;
+            }
             System.out.println("🎯 " + getName() + " использует Тройной Выстрел!");
             int damage = getDamage() * 2;
             boolean isCritical = random.nextInt(100) < criticalChance;

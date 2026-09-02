@@ -1,6 +1,7 @@
-package com.dmdev.lesson15;
+package Hero;
 
-import java.util.Random;
+import Enemy.Enemy;
+
 import java.util.Random;
 
 public class Mage extends Hero {

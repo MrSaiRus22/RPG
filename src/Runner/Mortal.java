@@ -1,4 +1,4 @@
-package com.dmdev.lesson15;
+package Runner;
 
 public interface Mortal {
     boolean isAlive();

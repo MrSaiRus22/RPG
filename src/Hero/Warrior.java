@@ -1,4 +1,6 @@
-package com.dmdev.lesson15;
+package Hero;
+import Enemy.Enemy;
+
 import java.util.Random;
 
 public class Warrior extends Hero {
@@ -17,8 +19,8 @@ public class Warrior extends Hero {
 
     @Override
     public void normalAttack(Enemy enemy) {
-        System.out.println("⚔️ " + getName() + " замахивается для удара по " + enemy.getName() + "!");
         endurance += 30;
+        System.out.println("⚔️ " + getName() + " замахивается для удара по " + enemy.getName() + "!");
         // 1. Проверка на промах героя
         if (random.nextInt(100) < missChance) {
             System.out.println("😅 " + getName() + " поскользнулся и промахнулся!");

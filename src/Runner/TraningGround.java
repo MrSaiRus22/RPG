@@ -1,4 +1,15 @@
-package com.dmdev.lesson15;
+package Runner;
+
+import Enemy.Enemy;
+import Enemy.Balrog;
+import Enemy.Orc;
+import Enemy.Wolf;
+import Enemy.Chicken;
+import Hero.Hero;
+import Hero.Mage;
+import Hero.Archer;
+import Hero.Warrior;
+import Hero.Hobbit;
 
 import java.util.Scanner;
 
@@ -141,7 +152,7 @@ public class TraningGround {
                 break;
             }
 
-            System.out.println("─".repeat(50));
+            System.out.println("══════════════════════════════════════════════════════════════════════════════");
         }
 
         // Результат боя
@@ -164,7 +175,7 @@ public class TraningGround {
             System.out.println("Скрытность: " + (hobbit.tryDodge() ? "Активна" : "Неактивна"));
         }
         System.out.println("Враг: " + enemy.getName() + " | Здоровье: " + enemy.getHealth());
-        System.out.println("═".repeat(50));
+        System.out.println("══════════════════════════════════════════════════════════════════════════════");
     }
 
     private static void showHeroInfo(Hero hero) {
@@ -205,7 +216,7 @@ public class TraningGround {
             System.out.println("😅 Шанс промаха: 10%");
             System.out.println("🌀 Шанс уклонения: 50%");
         }
-        System.out.println("═".repeat(50));
+        System.out.println("══════════════════════════════════════════════════════════════════════════════");
     }
 
     private static Hero getHero(int number, Mage mage, Warrior warrior, Archer archer, Hobbit hobbit) {
