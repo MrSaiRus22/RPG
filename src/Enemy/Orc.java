@@ -7,6 +7,7 @@ public class Orc extends Enemy {
         super(name, damage, health, criticalChance);
     }
 
+    @Override
     protected String getAttackMessage(Hero hero) {
         return getName() + " Ударил буловой " + hero.getName() + "a";
     }

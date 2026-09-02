@@ -7,6 +7,7 @@ public class Chicken extends Enemy {
         super(name, damage, health, criticalChance);
     }
 
+    @Override
     protected String getAttackMessage(Hero hero) {
         return getName() + " Клюнула " + hero.getName() + "a";
     }

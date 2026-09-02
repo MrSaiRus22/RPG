@@ -48,13 +48,10 @@ public abstract class Enemy implements Mortal {
         hero.takeDamage(damage);
     }
 
-    // Методы, которые можно переопределить в наследниках
-
     // 1. Сообщение об атаке
     protected String getAttackMessage(Hero hero) {
         return getName() + " атакует " + hero.getName() + "a";
     }
-
 
     @Override
     public boolean isAlive() {

@@ -2,11 +2,8 @@ package Hero;
 
 import Enemy.Enemy;
 
-import java.util.Random;
-
 public class Hobbit extends Hero {
 
-    private Random random = new Random();
     private boolean isHidden = false;
     private int dodgeChance = 70; // 70% шанс уклонения
     private int specialCooldown = 3; // Кулдаун специальной атаки
@@ -22,58 +19,22 @@ public class Hobbit extends Hero {
     @Override
     public void normalAttack(Enemy enemy) {
         System.out.println("⚔️ " + getName() + " Готовится бросить камень " + enemy.getName() + "!");
-        // 1. Проверка на промах героя
-        if (random.nextInt(100) < missChance) {
-            System.out.println("😅 " + getName() + " поскользнулся и промахнулся!");
-            return;
-        }
-        // 2. Проверка на уклонение врага
-        if (random.nextInt(100) < enemyDodgeChance) {
-            System.out.println("🌀 " + enemy.getName() + " увернулся от удара!");
-            return;
-        }
+        missEvasionCheck(enemy);
         System.out.println("🗿 " + getName() + " бросает камень в " + enemy.getName() + "!");
         int damage = getDamage();
-        boolean isCritical = random.nextInt(100) < criticalChance;
-
-        if (isCritical) {
-            damage = (int) (damage * 2.5);
-            System.out.println("💥 КРИТИЧЕСКИЙ УДАР! Мощный удар!");
-        } else {
-            // Обычный урон иногда меньше (70-100% от базового)
-            int damageVariation = 70 + random.nextInt(31); // 70-100%
-            damage = damage * damageVariation / 100;
-        }
-        System.out.println("Урон: " + damage);
-        enemy.takeDamage(damage);
+        isCriticalDamage(enemy);
         stones--;
         System.out.println("Урон: " + damage + " (Камни: " + stones + ")");
-
     }
 
     @Override
     public void strongAttack(Enemy enemy) {
-
+        System.out.println("⚔️ " + getName() + " Готовится к удару " + enemy.getName() + "!");
+        missEvasionCheck(enemy);
         System.out.println("👊 " + getName() + " наносит точный удар по ногам " + enemy.getName() + "!");
         int damage = (int) (getDamage() * 1.5);
-
-        boolean isCritical = random.nextInt(100) < criticalChance;
-
-        if (isCritical) {
-            damage = (int) (damage * 2.5);
-            System.out.println("💥 КРИТИЧЕСКИЙ УДАР! Мощный удар!");
-        } else {
-            // Обычный урон иногда меньше (70-100% от базового)
-            int damageVariation = 70 + random.nextInt(31); // 70-100%
-            damage = damage * damageVariation / 100;
-        }
+        isCriticalDamage(enemy);
         System.out.println("Урон: " + damage);
-        enemy.takeDamage(damage);
-        System.out.println("Урон: " + damage);
-
-        // Враг теряет 20% скорости (эффект на 1 ход)
-        System.out.println("🦶 " + enemy.getName() + " замедлен на 1 ход!");
-
     }
 
     @Override
@@ -91,23 +52,19 @@ public class Hobbit extends Hero {
             strongAttack(enemy);
             return;
         }
-
         // Скрытная атака
         System.out.println("\uD83D\uDC8D " + getName() + " надевает кольцо и становится невидимым!");
         System.out.println("🔪 " + getName() + " наносит скрытный удар " + enemy.getName() + "!");
-
         int damage = getDamage() * 3;
-
         enemy.takeDamage(damage);
         stones -= 3;
         specialCooldown = 3; // Кулдаун 3 хода
         isHidden = true;
-
         System.out.println("💥 КРИТИЧЕСКИЙ УРОН! Урон: " + damage + " (Камни: " + stones + ")");
         System.out.println("👻 " + getName() + " снова становится видимым!");
     }
 
-    // Дополнительный метод: Уклонение
+    @Override
     public boolean tryDodge() {
         int currentDodge = isHidden ? dodgeChance + 30 : dodgeChance;
         if (Math.random() * 100 < currentDodge) {

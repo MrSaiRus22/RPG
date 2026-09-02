@@ -130,7 +130,6 @@ public class TraningGround {
                 break;
             }
 
-            // Проверка уклонения для Хоббита
             boolean dodged = false;
             if (hero != null) {
                 if (hero.tryDodge()) {
