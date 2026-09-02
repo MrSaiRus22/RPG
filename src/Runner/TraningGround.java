@@ -22,10 +22,10 @@ public class TraningGround {
         Warrior warrior = new Warrior("Арагорн", 50, 2000,100);
         Hobbit hobbit = new Hobbit("Бильбо", 25, 750);
 
-        Balrog balrog = new Balrog("Балрог", 300, 2100);
-        Orc orc = new Orc("Орк", 170, 1350);
-        Wolf wolf = new Wolf("Варг", 325, 700);
-        Chicken chicken = new Chicken("Курочка", 75, 300);
+        Balrog balrog = new Balrog("Балрог", 300, 2100,35);
+        Orc orc = new Orc("Орк", 170, 1350,25);
+        Wolf wolf = new Wolf("Варг", 325, 700, 40);
+        Chicken chicken = new Chicken("Курочка", 75, 300,50);
 
         // Выбор героя
         System.out.println("╔════════════════════════════════════════════════════════════════════════════╗");
